@@ -2,7 +2,7 @@
 include('config/db.php');  // Include database connection
 
 // Fetch players from the database
-$sql = "SELECT * FROM players ORDER BY created_at DESC";
+$sql = "SELECT * FROM players ORDER BY created_at DESC";  // This will order by the 'created_at' column
 $result = $conn->query($sql);
 ?>
 
