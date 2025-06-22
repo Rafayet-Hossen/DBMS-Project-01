@@ -90,7 +90,7 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Form Styling */
+/* Form Styling for Login and Registration */
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -133,6 +133,7 @@ form button {
 form button:hover {
     background-color: #45a049;
 }
+
 /* Navbar and Logo Styling */
 header {
     background-color: #333;
@@ -181,6 +182,7 @@ nav ul li a.logout {
 nav ul li a.logout:hover {
     background-color: #d32f2f;
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
     #player-cards {
