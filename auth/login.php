@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body>
+<body style="background-image: url('../assets/images/background.jpg'); ">
     <header>
         <h1>Login to Football Transfermarket Bangladesh</h1>
     </header>

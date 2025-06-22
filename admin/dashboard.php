@@ -29,7 +29,7 @@ include('../config/db.php'); // Include the database connection
         <h2>Welcome, Admin</h2>
 
         <!-- Button to redirect to Add Player page -->
-        <a href="dashboard.php" class="btn">Add Player</a>
+        <a href="addplayer.php" class="btn">Add Player</a>
 
         <!-- Button to view booking requests -->
         <a href="viewrequests.php" class="btn">View Requests</a>
