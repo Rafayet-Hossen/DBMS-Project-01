@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             if ($role == 'Admin') {
                                 header("location: ../admin/dashboard.php");
                             } else {
-                                header("location: ../user/index.php");
+                                header("location: ../index.php");
                             }
                         } else {
                             $password_err = "Invalid password.";

@@ -6,6 +6,9 @@ include('../config/db.php'); // Include database connection
 $username = $password = $confirm_password = $role = "";
 $username_err = $password_err = $confirm_password_err = $role_err = "";
 
+// Flag for showing success modal
+$show_modal = false;
+
 // Process the form when submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate inputs
@@ -53,7 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $param_role = $role;
 
             if ($stmt->execute()) {
-                header("location: login.php");  // Redirect to login page after successful registration
+                // Set flag to show success modal
+                $show_modal = true;
             } else {
                 echo "Something went wrong. Please try again later.";
             }
@@ -119,6 +123,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </form>
     </section>
+
+    <!-- Success Modal (visible if registration is successful) -->
+    <?php if ($show_modal): ?>
+        <div class="modal" id="successModal" style="display: block;">
+            <div class="modal-content">
+                <span class="close" onclick="document.getElementById('successModal').style.display='none'">&times;</span>
+                <h2>Registration Successful!</h2>
+                <p>Your account has been successfully created. You can now log in using your credentials.</p>
+                <a href="login.php" class="btn">Go to Login</a>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <!-- Modal Style -->
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </body>
 
 </html>
