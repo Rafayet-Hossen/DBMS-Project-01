@@ -1,5 +1,6 @@
 <?php
-include('config/db.php');  // Include database connection
+include('includes/header.php');  // Include the navbar
+include('config/db.php');        // Include the database connection
 
 // Fetch players from the database
 $sql = "SELECT * FROM players ORDER BY created_at DESC";  // This will order by the 'created_at' column
@@ -17,10 +18,6 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-    <header>
-        <h1>Football Transfermarket Bangladesh</h1>
-    </header>
-
     <section>
         <h2>Trending Players</h2>
         <div id="player-cards">
