@@ -1,5 +1,5 @@
 <?php
-session_start(); // Start the session to check if user is logged in
+session_start(); // Start the session to check if the user is logged in
 ?>
 
 <header>
@@ -13,8 +13,15 @@ session_start(); // Start the session to check if user is logged in
             <li><a href="user/top_rated_players.php">Top Rated Players</a></li>
 
             <?php if (isset($_SESSION['role'])): ?>
+                <!-- If Admin, show the "Add Player" link -->
+                <?php if ($_SESSION['role'] == 'Admin'): ?>
+                    <li><a href="admin/dashboard.php">Dashboard</a></li>
+                <?php endif; ?>
+
+                <!-- Logout button for logged-in users -->
                 <li><a href="auth/logout.php">Logout</a></li>
             <?php else: ?>
+                <!-- Login button for non-logged-in users -->
                 <li><a href="auth/login.php">Login</a></li>
             <?php endif; ?>
         </ul>
